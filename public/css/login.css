@@ -1,0 +1,364 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* background: #9995 !important; */
+}
+
+
+
+body {
+    font-family: 'Figtree', sans-serif;
+}
+
+.img-background {
+    object-fit: cover;
+    height: 100%;
+}
+
+.col-6 {
+    height: 100%;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    background-color: #161616e7;
+    box-shadow: 0px 30px 120px rgba(1, 94, 187, 0.5);
+
+}
+
+#form-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+#welcome-lines {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#welcome-line-1 {
+    color: #283fc5da;
+    font-weight: 600;
+    font-size: 40px;
+  }
+
+  #welcome-line-2 {
+    color: #ffffff;
+    font-size: 18px;
+    margin-top: 17px;
+  }
+
+
+.form-inp {
+    margin-bottom: 15px;
+    border: 1px solid #007FFF;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #333 inset; /* Ajusta el color (#333) al de tu fondo */
+    -webkit-text-fill-color: #ffffff; /* Ajusta el color del texto si es necesario */
+    border-radius: 10px; /* Ajusta el radio del borde para suavizar la apariencia */
+    padding: 3px; /* Reduce el tamaño del relleno para un efecto más pequeño */
+}
+
+
+.form-inp input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: none;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.form-inp input:focus {
+    outline: none;
+}
+
+#submit-button-cvr {
+    margin-top: 20px;
+}
+
+#submit-button {
+    width: 100%;
+    padding: 14px;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: #007FFF;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#submit-button:hover {
+    background-color: #005bb5;
+}
+
+#forgot-pass {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#forgot-pass a {
+    color: #007FFF;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+#bar {
+    position: absolute;
+    left: 50%;
+    bottom: -50px;
+    width: 28px;
+    height: 8px;
+    margin-left: -14px;
+    background-color: #007FFF;
+    border-radius: 10px;
+}
+
+#bar:before,
+#bar:after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #ececec;
+    border-radius: 50%;
+}
+
+#bar:before {
+    right: -20px;
+}
+
+#bar:after {
+    right: -38px;
+}
+
+
+.button {
+    all: unset;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0.6em 2em;
+    border: rgba(10, 129, 226, 0.753) solid 0.15em;
+    border-radius: 1em;
+    color: rgba(21, 119, 230, 0.678);
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border 300ms, color 300ms;
+  }
+
+
+  /* boton ingresar */
+  .button p {
+    z-index: 1;
+    margin: 0;
+  }
+
+  .button:hover {
+    color: #ffffff96;
+  }
+
+  .button:active {
+    border-color: rgb(10, 90, 196);
+  }
+
+  .button::after, .button::before {
+    content: "";
+    position: absolute;
+    width: 9em;
+    aspect-ratio: 1;
+    background: rgb(6, 120, 187);
+    opacity: 50%;
+    border-radius: 50%;
+    transition: transform 500ms, background 300ms;
+  }
+
+  .button::before {
+    left: 0;
+    transform: translateX(-9em);
+  }
+
+  .button::after {
+    right: 0;
+    transform: translateX(9em);
+  }
+
+  .button:hover:before {
+    transform: translateX(-1em);
+  }
+
+  .button:hover:after {
+    transform: translateX(1em);
+  }
+
+  .button:active:before,
+  .button:active:after {
+    background: teal;
+  }
+
+
+
+
+
+    #input-area {
+        width: 80%;
+        padding: 20px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        justify-content: center;
+    }
+    #input-area label {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 5px;
+    display: block;
+    text-align: left;
+    }
+
+
+    #cuadro {
+    margin-bottom: 30px;
+    display: block;
+    text-align: left;
+    }
+
+  #form-control {
+    position: relative;
+    margin: 5px 0px;
+    width: 100%;
+
+  }
+
+  #form-control input {
+    background-color: transparent;
+    border: 0;
+    border-radius: 0%;
+    border-bottom: 2px #ffffff solid;
+    width: 100%;
+    padding: 20px;
+    font-size: 13.3px;
+    font-family: 'Figtree', sans-serif;
+    color: #000000;
+  }
+
+
+    #form-control input:focus,
+    #form-control input:valid {
+        outline: none;
+        border-bottom-color: #8fc7ff;
+    }
+
+  #form-control label {
+    position: absolute;
+    top: 15px;
+    left: 0px;
+    pointer-events: none;
+  }
+
+ /*  #form-control label span {
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+    color: #fff;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+ /*  #form-control input:focus+label span,
+  #form-control input:valid+label span {
+    color: lightblue;
+    transform: translateY(-30px);
+  }
+
+
+
+  /* remember me */
+
+    #form-recuerdame {
+    padding-bottom: 30px;
+
+  }
+
+  .switch {
+    --input-focus: #2d8cf0;
+    --bg-color: #111;
+    --bg-color-alt: #7e7e7e;
+    --main-color: #fefefe;
+    --input-out-of-focus: #111;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 70px;
+    height: 36px;
+    transform: translateX(calc(50% - 10px));
+  }
+
+  .toggle {
+    opacity: 0;
+  }
+
+  .slider {
+    box-sizing: border-box;
+    border-radius: 100px;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--input-out-of-focus);
+    transition: 0.3s;
+  }
+
+  .slider:before {
+    content: "No";
+    box-sizing: border-box;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    left: 2px;
+    bottom: 1px;
+    border: 2px solid var(--main-color);
+    border-radius: 100px;
+    background-color: var(--bg-color);
+    color: var(--main-color);
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 25px;
+    transition: 0.3s;
+  }
+
+  .toggle:checked + .slider {
+    background-color: var(--input-focus);
+    transform: translateX(-32px);
+  }
+
+  .toggle:checked + .slider:before {
+    content: "Si";
+    transform: translateX(32px);
+  }

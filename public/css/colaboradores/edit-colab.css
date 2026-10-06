@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.section-colaborador {
+    padding: 1rem;
+}
+
+/* buscador */
+.search-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 10vh;
+    gap: 0.8rem;
+}
+
+.search-title {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.search-input-content {
+    display: inline-block;
+    position: relative;
+}
+
+
+.search-input-content input {
+    width: 30em;
+    padding: 12px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.521);
+    outline: none;
+    font-size: 1.3rem;
+}
+
+.search-input-content button {
+    background-color: #4e99e9;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 17px 27px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: .9s ease;
+}
+
+#resultados {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.1rem;
+    padding: 2rem;
+}
+
+.text-colab-error {
+    text-align: center;
+    font-size: 1.4rem;
+    color: red;
+}
+
+/* form colab */
+.title-form {
+    text-align: center;
+    font-size: 1.9rem;
+}
+
+.form-colab-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(170, 179, 199, 0.664);
+    width: 48%;
+    padding: 1.5rem;
+    border-radius: 2.5rem;
+}
+
+#editar-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.data-colab {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.data-colab label {
+    font-size: 2rem;
+}
+
+.data-colab input , .data-colab select{
+    font-size: 1rem;
+    width: 30rem;
+    height: 5vh;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+}
+
+/* btn colab */
+.btn-colab-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    color: white;
+    background-color: #2351e7;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    line-height: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    cursor: pointer;
+    text-align: center;
+    margin-right: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    border: none;
+}
+
+.button:hover {
+    background-color: #07428fee;
+}
+
+.button svg {
+    display: inline;
+    width: 1.3rem;
+    height: 1.3rem;
+    margin-right: 0.75rem;
+    color: white;
+}
+
+.button:focus svg {
+    animation: spin_357 0.5s linear;
+}
+
+@keyframes spin_357 {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+}
+
+/* responsive */
+
+/* width */
+/* 1620px */
+@media (max-width: 1620px) {
+    .form-colab-content {
+        width: 70%;
+    }
+
+    .data-colab input , .data-colab select{
+        width: 35rem;
+    }
+}
+
+/* 1080px */
+@media (max-width: 1080px) {
+    .form-colab-content {
+        width: 85%;
+    }
+}
+
+/* 912px */
+@media (max-width: 912px) {
+    .form-colab-content {
+        width: 95%;
+    }
+
+    .data-colab input , .data-colab select{
+        width: 30rem;
+    }
+}
+
+/* 762px */
+@media (max-width: 762px) {
+    .form-colab-content {
+        width: 100%;
+    }
+
+    .data-colab label {
+        font-size: 1.6rem;
+    }
+
+    .data-colab input , .data-colab select {
+        font-size: 1.1rem;
+    }
+}
+
+/* 668px */
+@media (max-width: 668px) {
+    .search-input-content input {
+        width: 25em;
+    }
+
+    .search-input-content button {
+        padding: 17px 27px;
+    }
+}
+
+/* 600px */
+@media (max-width: 600px) {
+    .form-colab-content {
+        width: 100%;
+    }
+
+    .data-colab input , .data-colab select{
+        width: 100%;
+    }
+}
+
+/* 550px */
+@media (max-width: 550px) {
+    .search-input-content {
+        width: 100%;
+    }
+
+    .search-input-content input {
+        width: 100%;
+    }
+}
+
+/* 420px */
+@media (max-width: 420px) {
+    .search-title {
+        font-size: 1.8rem;
+    }
+
+    .search-input-content input {
+        font-size: 0.9rem;
+    }
+
+    .search-input-content button {
+        padding: 13px 22px;
+    }
+
+    .data-colab input , .data-colab select{
+        font-size: 0.9rem;
+    }
+
+    #resultados {
+        width: 100%;
+        padding: 0 0;
+    }
+}
+
+/* 290px */
+@media (max-width: 290px) {
+    .section-colaborador {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .data-colab label {
+        font-size: 1.2rem;
+    }
+
+    .data-colab input , .data-colab select{
+        font-size: 0.8rem;
+    }
+}
+
+/* 236px */
+@media (max-width: 236px) {
+    .btn-colab-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .btn-colab-content button {
+        width: 100%;
+        font-size: 0.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem;
+    }
+}
+
+.error-message {
+    color: red;
+}

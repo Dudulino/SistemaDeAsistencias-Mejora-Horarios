@@ -1,0 +1,71 @@
+.pago-check-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+}
+
+.btn-agregar-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.btn-agregar-content button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-agregar-content span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.pagos-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gasto-item {
+    display: flex;
+    gap: 1em;
+}
+
+.descripcion-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.monto-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-pagos {
+    display: flex;
+    position: relative;
+    top: 1.2em;
+}
+
+.name-colab {
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
+.botones-colabs {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}

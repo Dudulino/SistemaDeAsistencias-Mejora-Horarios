@@ -1,0 +1,10 @@
+.fc-event-container {
+  display: inline-block;
+  padding: 2px 40px;
+}
+/* Forzar ancho completo en eventos de timeGrid */
+.fc-timegrid-event {
+  left: 0 !important;     /* que empiece desde la izquierda */
+  right: 0 !important;    /* que termine al borde derecho */
+  width: 100% !important; /* ocupar toda la columna */
+}
