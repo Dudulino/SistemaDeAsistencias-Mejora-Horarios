@@ -62,7 +62,7 @@ class DemoHorariosSeeder extends Seeder
 
         /*
         |--------------------------------------------------------------------------
-        | 2. Salones
+        | 2. Salones de demostración
         |--------------------------------------------------------------------------
         */
 
@@ -96,31 +96,35 @@ class DemoHorariosSeeder extends Seeder
 
         /*
         |--------------------------------------------------------------------------
-        | 3. Áreas
+        | 3. Áreas con imágenes originales
         |--------------------------------------------------------------------------
         */
 
         $datosAreas = [
             [
                 'nombre' => 'Área de Software',
+                'icono' => '1791246883.jpg',
                 'descripcion' => 'Área encargada del desarrollo, mantenimiento y soporte de soluciones de software de la empresa.',
                 'color' => '#3A86FF',
                 'salon' => 'Sala de Desarrollo',
             ],
             [
                 'nombre' => 'Administración TI',
+                'icono' => '1791246987.webp',
                 'descripcion' => 'Área encargada de la gestión y soporte de los recursos tecnológicos y servicios de TI de la empresa.',
                 'color' => '#00B894',
                 'salon' => 'Sala de Administración TI',
             ],
             [
                 'nombre' => 'Infraestructura y Redes',
+                'icono' => '1791247649.webp',
                 'descripcion' => 'Área encargada de la instalación, configuración, soporte y mantenimiento de redes e infraestructura tecnológica.',
                 'color' => '#6C5CE7',
                 'salon' => 'Sala de Infraestructura y Redes',
             ],
             [
                 'nombre' => 'Capacitación y Soporte',
+                'icono' => '1791247701.webp',
                 'descripcion' => 'Área destinada a la capacitación técnica, orientación y soporte de los practicantes en actividades relacionadas con tecnologías de información.',
                 'color' => '#F39C12',
                 'salon' => 'Sala de Capacitación',
@@ -137,29 +141,74 @@ class DemoHorariosSeeder extends Seeder
                     'color_hex' => $dato['color'],
                     'estado' => 1,
                     'salon_id' => $salones[$dato['salon']]->id,
-                    'icono' => 'Default.png',
+                    'icono' => $dato['icono'],
                 ]
             );
         }
 
         /*
         |--------------------------------------------------------------------------
-        | 4. Horarios y bloques
+        | 4. Horarios y bloques de asignación
         |--------------------------------------------------------------------------
         */
 
         $bloques = [
-            ['area' => 'Área de Software',          'dia' => 'Lunes',     'inicio' => '08:00', 'fin' => '12:00', 'turno' => 'Mañana'],
-            ['area' => 'Área de Software',          'dia' => 'Miércoles', 'inicio' => '08:00', 'fin' => '12:00', 'turno' => 'Mañana'],
-
-            ['area' => 'Administración TI',         'dia' => 'Lunes',     'inicio' => '14:00', 'fin' => '18:00', 'turno' => 'Tarde'],
-            ['area' => 'Administración TI',         'dia' => 'Miércoles', 'inicio' => '14:00', 'fin' => '18:00', 'turno' => 'Tarde'],
-
-            ['area' => 'Infraestructura y Redes',   'dia' => 'Martes',    'inicio' => '08:00', 'fin' => '12:00', 'turno' => 'Mañana'],
-            ['area' => 'Infraestructura y Redes',   'dia' => 'Jueves',    'inicio' => '08:00', 'fin' => '12:00', 'turno' => 'Mañana'],
-
-            ['area' => 'Capacitación y Soporte',    'dia' => 'Martes',    'inicio' => '14:00', 'fin' => '18:00', 'turno' => 'Tarde'],
-            ['area' => 'Capacitación y Soporte',    'dia' => 'Jueves',    'inicio' => '14:00', 'fin' => '18:00', 'turno' => 'Tarde'],
+            [
+                'area' => 'Área de Software',
+                'dia' => 'Lunes',
+                'inicio' => '08:00',
+                'fin' => '12:00',
+                'turno' => 'Mañana'
+            ],
+            [
+                'area' => 'Área de Software',
+                'dia' => 'Miércoles',
+                'inicio' => '08:00',
+                'fin' => '12:00',
+                'turno' => 'Mañana'
+            ],
+            [
+                'area' => 'Administración TI',
+                'dia' => 'Lunes',
+                'inicio' => '14:00',
+                'fin' => '18:00',
+                'turno' => 'Tarde'
+            ],
+            [
+                'area' => 'Administración TI',
+                'dia' => 'Miércoles',
+                'inicio' => '14:00',
+                'fin' => '18:00',
+                'turno' => 'Tarde'
+            ],
+            [
+                'area' => 'Infraestructura y Redes',
+                'dia' => 'Martes',
+                'inicio' => '08:00',
+                'fin' => '12:00',
+                'turno' => 'Mañana'
+            ],
+            [
+                'area' => 'Infraestructura y Redes',
+                'dia' => 'Jueves',
+                'inicio' => '08:00',
+                'fin' => '12:00',
+                'turno' => 'Mañana'
+            ],
+            [
+                'area' => 'Capacitación y Soporte',
+                'dia' => 'Martes',
+                'inicio' => '14:00',
+                'fin' => '18:00',
+                'turno' => 'Tarde'
+            ],
+            [
+                'area' => 'Capacitación y Soporte',
+                'dia' => 'Jueves',
+                'inicio' => '14:00',
+                'fin' => '18:00',
+                'turno' => 'Tarde'
+            ],
         ];
 
         foreach ($bloques as $bloque) {
@@ -191,22 +240,75 @@ class DemoHorariosSeeder extends Seeder
 
         /*
         |--------------------------------------------------------------------------
-        | 5. Practicantes
+        | 5. Practicantes ficticios
         |--------------------------------------------------------------------------
         */
 
         $practicantes = [
-            ['nombre' => 'Ana',     'apellido' => 'Torres',   'correo' => 'practicante01@demo.local', 'dni' => '70000001', 'celular' => '900000001', 'area' => 'Área de Software'],
-            ['nombre' => 'Luis',    'apellido' => 'Mendoza',  'correo' => 'practicante02@demo.local', 'dni' => '70000002', 'celular' => '900000002', 'area' => 'Área de Software'],
-
-            ['nombre' => 'Carlos',  'apellido' => 'Ramirez',  'correo' => 'practicante03@demo.local', 'dni' => '70000003', 'celular' => '900000003', 'area' => 'Administración TI'],
-            ['nombre' => 'Maria',   'apellido' => 'Flores',   'correo' => 'practicante04@demo.local', 'dni' => '70000004', 'celular' => '900000004', 'area' => 'Administración TI'],
-
-            ['nombre' => 'Diego',   'apellido' => 'Vargas',   'correo' => 'practicante05@demo.local', 'dni' => '70000005', 'celular' => '900000005', 'area' => 'Infraestructura y Redes'],
-            ['nombre' => 'Valeria', 'apellido' => 'Rojas',    'correo' => 'practicante06@demo.local', 'dni' => '70000006', 'celular' => '900000006', 'area' => 'Infraestructura y Redes'],
-
-            ['nombre' => 'Jorge',   'apellido' => 'Castro',   'correo' => 'practicante07@demo.local', 'dni' => '70000007', 'celular' => '900000007', 'area' => 'Capacitación y Soporte'],
-            ['nombre' => 'Lucia',   'apellido' => 'Salazar',  'correo' => 'practicante08@demo.local', 'dni' => '70000008', 'celular' => '900000008', 'area' => 'Capacitación y Soporte'],
+            [
+                'nombre' => 'Ana',
+                'apellido' => 'Torres',
+                'correo' => 'practicante01@demo.local',
+                'dni' => '70000001',
+                'celular' => '900000001',
+                'area' => 'Área de Software'
+            ],
+            [
+                'nombre' => 'Luis',
+                'apellido' => 'Mendoza',
+                'correo' => 'practicante02@demo.local',
+                'dni' => '70000002',
+                'celular' => '900000002',
+                'area' => 'Área de Software'
+            ],
+            [
+                'nombre' => 'Carlos',
+                'apellido' => 'Ramirez',
+                'correo' => 'practicante03@demo.local',
+                'dni' => '70000003',
+                'celular' => '900000003',
+                'area' => 'Administración TI'
+            ],
+            [
+                'nombre' => 'Maria',
+                'apellido' => 'Flores',
+                'correo' => 'practicante04@demo.local',
+                'dni' => '70000004',
+                'celular' => '900000004',
+                'area' => 'Administración TI'
+            ],
+            [
+                'nombre' => 'Diego',
+                'apellido' => 'Vargas',
+                'correo' => 'practicante05@demo.local',
+                'dni' => '70000005',
+                'celular' => '900000005',
+                'area' => 'Infraestructura y Redes'
+            ],
+            [
+                'nombre' => 'Valeria',
+                'apellido' => 'Rojas',
+                'correo' => 'practicante06@demo.local',
+                'dni' => '70000006',
+                'celular' => '900000006',
+                'area' => 'Infraestructura y Redes'
+            ],
+            [
+                'nombre' => 'Jorge',
+                'apellido' => 'Castro',
+                'correo' => 'practicante07@demo.local',
+                'dni' => '70000007',
+                'celular' => '900000007',
+                'area' => 'Capacitación y Soporte'
+            ],
+            [
+                'nombre' => 'Lucia',
+                'apellido' => 'Salazar',
+                'correo' => 'practicante08@demo.local',
+                'dni' => '70000008',
+                'celular' => '900000008',
+                'area' => 'Capacitación y Soporte'
+            ],
         ];
 
         foreach ($practicantes as $indice => $dato) {
@@ -223,7 +325,12 @@ class DemoHorariosSeeder extends Seeder
                     'sede_id' => $sede->id,
                     'carrera_id' => $carrera->id,
                     'distrito_id' => $distrito?->id,
-                    'id_senati' => 'SENATI' . str_pad($indice + 1, 3, '0', STR_PAD_LEFT),
+                    'id_senati' => 'SENATI' . str_pad(
+                        $indice + 1,
+                        3,
+                        '0',
+                        STR_PAD_LEFT
+                    ),
                     'icono' => 'Default.png',
                 ]
             );
@@ -250,7 +357,7 @@ class DemoHorariosSeeder extends Seeder
 
             /*
             |--------------------------------------------------------------------------
-            | Disponibilidad según los bloques de su área
+            | 6. Disponibilidad de practicantes
             |--------------------------------------------------------------------------
             */
 
@@ -278,7 +385,18 @@ class DemoHorariosSeeder extends Seeder
             }
         }
 
-        $this->command->info('Demo de asignación automatizada creado correctamente.');
-        $this->command->info('4 áreas - 4 salones - 8 practicantes - 16 disponibilidades - 8 bloques.');
+        /*
+        |--------------------------------------------------------------------------
+        | 7. Confirmación
+        |--------------------------------------------------------------------------
+        */
+
+        $this->command->info(
+            'Demo de asignación automatizada creado correctamente.'
+        );
+
+        $this->command->info(
+            '4 áreas - 4 salones - 8 practicantes - 16 disponibilidades - 8 bloques.'
+        );
     }
 }
