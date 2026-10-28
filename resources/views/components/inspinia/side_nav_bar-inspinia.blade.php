@@ -66,6 +66,7 @@
             <li>
                 <a href="{{route('dashboard')}}"><i class="fa fa-th-large"></i> <span class="nav-label">Inicio</span></a>
             </li>
+            <li><a href="{{ route('asistenteGemini.index') }}"><i class="fa fa-comments-o"></i> <span class="nav-label">Asistente inteligente</span></a></li>
             @if($userData['isAdmin'])
                 <li>
                     <a href="#"><i class="fa fa-clock-o"></i> <span class="nav-label">Horarios

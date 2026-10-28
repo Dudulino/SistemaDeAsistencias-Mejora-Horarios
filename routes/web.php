@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AccountsController;
 use App\Http\Controllers\AsignacionHorariosController;
+use App\Http\Controllers\AsistenteGeminiController;
 use App\Http\Controllers\ActividadesController;
 use App\Http\Controllers\AjusteController;
 use App\Http\Controllers\AreaController;
@@ -106,6 +107,10 @@ Route::middleware('auth')->group(function () {
     Route::get('area/showing/{area_id}', [AreaController::class, 'showArea'])->name('areas.showArea');
     Route::get('areas/buscar', [AreaController::class, 'index'])->name('areas.buscar');
     Route::resource('areas', AreaController::class);
+
+    // ASISTENTE GUIADO: respuestas y navegación limitadas al rol autenticado
+    Route::get('/asistente-inteligente', [AsistenteGeminiController::class, 'index'])->name('asistenteGemini.index');
+    Route::post('/asistente-inteligente/preguntar', [AsistenteGeminiController::class, 'preguntar'])->middleware('throttle:10,1')->name('asistenteGemini.preguntar');
 
     // MÓDULO DE MEJORA: ASIGNACIÓN AUTOMATIZADA DE HORARIOS
     Route::get('/asignacion-horarios', [AsignacionHorariosController::class, 'index'])->name('asignacionHorarios.index');
