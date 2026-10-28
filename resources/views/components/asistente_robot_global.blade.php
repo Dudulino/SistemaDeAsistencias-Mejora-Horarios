@@ -8,7 +8,7 @@
    <a href="{{ route('asignacionHorarios.index') }}">Abrir horarios</a>
   </div>
   @if($userData['isAdmin'])
-  <div class="jp-automation"><strong>Automatización supervisada</strong><p>El sistema puede generar una propuesta usando su algoritmo. Debes revisar y confirmar los resultados antes de guardar los horarios.</p><button id="jp-propose" type="button">Preparar asignación</button></div>
+  <div class="jp-automation"><strong>Automatización supervisada</strong><p>El sistema puede generar una propuesta usando su algoritmo. Debes revisar y confirmar los resultados antes de guardar los horarios.</p><button id="jp-propose" type="button">Revisar y preparar</button> <button id="jp-generate" type="button">Generar propuesta ahora</button></div>
   @endif
   <form id="jp-form"><input id="jp-question" required maxlength="700" minlength="3" autocomplete="off" placeholder="Pregúntame algo..." aria-label="Pregunta para Gemini"><button type="submit" id="jp-send">Enviar</button></form>
   <div class="jp-foot"><a href="{{ route('asistenteGemini.index') }}">Abrir chat completo</a><small>Sin acceso libre para modificar la base de datos</small></div>
@@ -37,7 +37,7 @@ function ready(){
  async function ask(q){if(!q.trim()||send.disabled)return;add(q,'user');question.value='';send.disabled=true;const waiting=add('Consultando a Gemini...','ai');try{const response=await fetch(root.dataset.chatUrl,{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json','Accept':'application/json','X-CSRF-TOKEN':document.querySelector('meta[name="csrf-token"]')?.content||@json(csrf_token())},body:JSON.stringify({pregunta:q})});if(!response.ok)throw new Error('Consulta no disponible ('+response.status+')');const data=await response.json();waiting.textContent=data.respuesta||'Sin respuesta';if(data.aviso)add(data.aviso,'ai');for(const item of data.accesos||[]){const a=document.createElement('a');a.textContent='Abrir '+item.nombre;a.href=item.url;waiting.appendChild(document.createElement('br'));waiting.appendChild(a)}speak(data.respuesta||'')}catch(e){waiting.textContent='No se pudo consultar Gemini. '+e.message}finally{send.disabled=false;messages.scrollTop=messages.scrollHeight;question.focus()}}
  document.getElementById('jp-form').addEventListener('submit',e=>{e.preventDefault();ask(question.value)});
  root.querySelectorAll('[data-question]').forEach(b=>b.addEventListener('click',()=>ask(b.dataset.question)));
- const propose=document.getElementById('jp-propose');if(propose)propose.addEventListener('click',()=>{
+ const generate=document.getElementById('jp-generate');if(generate)generate.addEventListener('click',()=>{\n  if(!window.confirm('¿Autorizas generar una PROPUESTA de horarios con el algoritmo actual? Esta operación puede reemplazar el borrador anterior, pero NO confirmará ni guardará asignaciones definitivas.'))return;\n  const form=document.createElement('form');form.method='POST';form.action=root.dataset.generateUrl;const csrf=document.createElement('input');csrf.type='hidden';csrf.name='_token';csrf.value=@json(csrf_token());form.appendChild(csrf);document.body.appendChild(form);form.submit();\n });\n const propose=document.getElementById('jp-propose');if(propose)propose.addEventListener('click',()=>{
   const approved=window.confirm('¿Quieres ir a revisar los datos y preparar la propuesta con el algoritmo de asignación? No se guardarán horarios automáticamente.');if(approved)window.location.assign(root.dataset.assignmentUrl);
  });
 }
