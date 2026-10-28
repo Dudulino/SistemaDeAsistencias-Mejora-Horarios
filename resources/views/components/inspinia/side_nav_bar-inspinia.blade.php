@@ -333,3 +333,6 @@ function confirmLogout() {
 
     <script src="{{asset('js/InspiniaViewsJS/notifications.js')}}"></script>
     <script src="{{ asset('js/InspiniaViewsJS/notificacionBirthday.js') }}"></script>
+
+{{-- Asistente global en todas las pantallas que usan el menú Inspinia --}}
+@include('components.asistente_robot_global')
